@@ -8,6 +8,20 @@ Pitch is a Flask application that allows users an opportunity to say something m
 <ul>
 <li>Below is the landing page once the web browser is loaded</li>
 <img src="/Screenshot from 2020-04-28 09-36-51.jpg" alt="Pitch landing page" width="1000"/>
+</ul>
+
+### Live link :
+
+## User Story
+<ul>
+<li>Users can  see the pitches other people have posted.</li>
+<li>Users can vote on the pitch they liked and give it a downvote or upvote.</li>
+<li>Users can view the pitches they've  created in their profile page</li>
+<li>Users can comment on the different pitches and leave feedback.</li>
+<li>Users can submit a pitch in any category.</li>
+<li>Users can view the different categories.</li>
+<li>Users can sign in for them to leave a comment</li>
+</ul>
 
 ## Setup Instructions
 <ol>
@@ -26,7 +40,6 @@ source virtual/bin/activate
 <li>Run test at <code>python3 manage,py test</code></li>
 </ol>
 
-### Live link :
 
 ## Technology & Dependency
 <ol>
@@ -50,14 +63,14 @@ source virtual/bin/activate
 <td>Redirected to a page with a list of articles from the source</td>
 </tr>
 <tr>
-<td>Display news sources</td>
+<td></td>
 <td><strong>On page load</strong></td>
-<td>List of various news sources is displayed per category</td>
+<td></td>
 </tr>
 <tr>
-<td>Display the preview of an article</td>
+<td></td>
 <td><strong>On page load</strong></td>
-<td>Each article displays an image, title, description and publication date</td>
+<td></td>
 </tr>
 </table>
 
