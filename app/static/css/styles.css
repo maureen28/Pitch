@@ -2,3 +2,7 @@ body{
     font-family: 'Libre Caslon Text', serif;
     background-color: #A0D2DB;
 }
+.navbar ul{
+list-style: none;
+display: inline block;
+}
