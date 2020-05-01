@@ -1,7 +1,7 @@
-# The NEWS API Specification
+# Pitch Specification
 <p>I have tried to make the specifications as easy to read and understand.</p>
-<p>Last modified: <b>27/4/2020</b></p>
-<p>Version : 3.6</p>
+<p>Last modified: <b>01/5/2020</b></p>
+<p>Version : python3.6</p>
 
 ## TABLE OF CONTENTS
 <ul>
@@ -12,41 +12,38 @@
 </ul>
 
 <h2> 1. Introduction </h2><hr>
-<ol type='A'>
+<ol>
 <li><b> Scope</b></li>
-<p>This is a News Web application that keeps track of the top headlines as well as lists and preview news articles from various sources.</p>
-<p>It is entirely powered by the News Api.</p>
-<p>This project covers fetching, filtering and displaying data </p>
-<p>It's future scope is the ability to implement subscription and authentication. Users will be able to subscribe so they can get the latest news.</p>
+<p>This is a Flask application that allows users an opportunity to say something meaningful if the user was given only one minute in life to say something.</p>
+<p>It's future scope is the ability to implement saving features. Users will be able to save a pitch hey have seen for later reference.</p>
 
 <li><b> Goals</b></li>
 <ul>
-<li>Gives information on politics, business, health and entertainment</li>
+<li>Gives information on a particular pitch</li>
 <li>Easily accessible</li>
-<li>Instant and latest news from all over the world</li>
-<li>Pictures relvant to the articles</li>
+<li>You can like, dislike as well as comment on a pitch.</li>
 <ul>
 
 <li><b> Goals for implementation</b></li>
 <pre>
-<code>This app must be secure in all environments. We do this by using the SECRET_API_KEY to avoid explicity as well as forgery</code>
+<code>This app must be secure in all environments. We do this by using the SECRET_API_KEY to avoid explicity as well as forgery.</code>
 </pre>
 </ol>
 
 <h2> 2. System Overview </h2><hr>
-<p>This app follows the following steps to ensure it outputs the latest news from different sources </p>
+<p>This app follows the following steps to ensure it outputs the latest pitch in different categories </p>
 <ol>
 <li><b> How the System Works</b></li>
 <pre><code> 
-<b>Fetching data:</b>
-Periodically, the News app gets updates from The News Web API using the defined Base_URL and an API_KEY, with the use of a context manager, the data from the API gets read, then converted into json format and stored in an object.
+<b>Sign up or login:</b>
+A new user will be prompted to register following the instructions on the form. 
+They can also sign in if they already have an account.
+Once they login they can see their profile and update it as well.
 
-<b>Processing data:</b>
-The Json data then gets processed while applying a filter by the key value assigned to a variable
-ie: Once we create an object we then instantiate it respective class.
-<b>Displaying data:</b>
-Processed data then get passed into the template(html), where it gets iterated through and displayed.
-</code></pre>
+<b>Creating and Updating data:</b>
+Periodically, the Pitch app gets data from its input forms. It has input fields where users can fill.
+The data is then published when the user clicks the submit data.
+<code></code>
 </ul>
 <h2> 3. Usage </h2><hr>
 <ol type ='a'>
@@ -57,7 +54,7 @@ Processed data then get passed into the template(html), where it gets iterated t
 </ol>
 <pre>
 <code>** Disclaimer **
-The data contained is not filtered by contents, hence the news app won't be responsible for any rude or explicit wordings or images.
+The data contained is not filtered by contents, hence the pitch app won't be responsible for any rude or explicit wordings or images.
 </code>
 </pre>
 

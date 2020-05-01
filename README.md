@@ -42,7 +42,7 @@ source virtual/bin/activate
 
 ## Technology & Dependency
 <ol>
-<li>python3.6</li>
+<li>python3.6</li>0
 <li>Pip & pyperclip</li>
 <li>CSS(Bootstrap)</li>
 <li>Flask Framework</li>
