@@ -25,7 +25,7 @@ Pitch is a Flask application that allows users an opportunity to say something m
 
 ## Setup Instructions
 <ol>
-<li>Clone or download the repository <code>https://github.com/maureen28/Pitch.git</code> </li>
+<li>Clone or download the repository <code> https://github.com/maureen28/Pitch.git</code> </li>
 <li>Create a virtual environment
 <pre>
 <code>
@@ -33,13 +33,12 @@ pip install virtualenv
 source virtual/bin/activate
 </code></pre>
 </li>
-<li>Install all the requirements <code>pip install -r requirements.txt</code></li>
+<li>Install all the requirements <code> pip install -r requirements.txt</code></li>
 <li>Add variables  <code> export DATABASE_URL='postgresql+psycopg2://name:password@localhost/pitching'
 </code></li>
 <li>Run <code>./start.sh</code></li>
-<li>Run test at <code>python3 manage,py test</code></li>
+<li>Run test at <code>python3 manage.py test</code></li>
 </ol>
-
 
 ## Technology & Dependency
 <ol>
@@ -50,7 +49,7 @@ source virtual/bin/activate
 <li>PostgreSQL</li>
 </ol>
 
-## BDD
+## Behavior Driven Deveopment
 <table>
 <tr>
 <th>Behaviour</th>
@@ -58,19 +57,19 @@ source virtual/bin/activate
 <th>Output</th>
 </tr>
 <tr>
-<td>Display articles from a news source</td>
-<td><strong>Click a news source</strong></td>
-<td>Redirected to a page with a list of articles from the source</td>
+<td><strong>User login</strong></td>
+<td>User enters email address and password</td>
+<td>User is logged into the system</td>
 </tr>
 <tr>
-<td></td>
-<td><strong>On page load</strong></td>
-<td></td>
+<td><strong>Register as a new user</strong></td>
+<td>A form containing username, email, password and confirm password </td>
+<td>User is registered</td>
 </tr>
 <tr>
-<td></td>
-<td><strong>On page load</strong></td>
-<td></td>
+<td><strong>Adds a new pitch</strong></td>
+<td>A form containing input fields for heading, pitch text and comment</td>
+<td>New pitch is added.</td>
 </tr>
 </table>
 
