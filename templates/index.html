@@ -33,17 +33,17 @@
                     <a class="nav-link" href="#"> <span class="sr-only"></span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="{{url_for('home')}}">Home</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="{{url_for('about')}}">About</a>
                 </li>
             </ul>
             <!-- Navbar Right Side -->
             <div class="navbar-nav navbar-right">
-                <a class="nav-item nav-link" href="/login">Login</a>
-                <a class="nav-item nav-link" href="/register">Register</a>
+                <a class="nav-item nav-link" href="{{url_for('login')}}">Login</a>
+                <a class="nav-item nav-link" href="{{url_for('register')}}">Register</a>
             </div>
         </div>
     </nav>
