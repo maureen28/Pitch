@@ -38,10 +38,11 @@
             <!-- Navbar Right Side -->
             <div class="navbar-nav navbar-right">
                 {% if current_user.is_authenticated %}
-                <a class="nav-item nav-link" href="{{ url_for('logout') }}">Sign out</a>
+                <a class="nav-item nav-link" href="{{ url_for('account') }}">My Profile</a>
+                <a class="nav-item nav-link" href="{{ url_for('logout') }}">Log Out</a>
                 {% else %}
-                <a class="nav-item nav-link" href="{{ url_for('login') }}">Login</a>
-                <a class="nav-item nav-link" href="{{ url_for('register') }}">Register</a>
+                <a class="nav-item nav-link" href="{{ url_for('login') }}">Log In</a>
+                <a class="nav-item nav-link" href="{{ url_for('register') }} ">Create New Account</a>
                 {% endif %}
             </div>
         </div>
