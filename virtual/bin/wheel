@@ -1,5 +1,5 @@
 #!/bin/sh
-'''exec' "/home/maureen/Documents/Moringa Python/Pitches/virtual/bin/python" "$0" "$@"
+'''exec' "/home/maureen/Documents/Moringa Python/Assignments/Pitches/virtual/bin/python" "$0" "$@"
 ' '''
 # -*- coding: utf-8 -*-
 import re

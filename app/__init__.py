@@ -1,44 +1,13 @@
-from flask import Flask, render_template,flash,redirect, url_for
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from models import RegistrationForm,LoginForm
-from datetime import datetime
-from .models import User,Post
+from flask_bcrypt import Bcrypt
+from flask_login import LoginManager
 
 app = Flask(__name__)
 app.config['SECRET_KEY']= '754aeac211d43da4de04692f6d1ffd5a'
-app.config['SQLALCHEMY_DATABASE_URI'] ='sqlite:////site.db'
+app.config['SQLALCHEMY_DATABASE_URI'] ='sqlite:///site.db'
 db = SQLAlchemy(app)
+bcrypt = Bcrypt(app)
+login_manager = LoginManager(app)
 
-
-@app.route('/')
-@app.route('/home')
-def home():
-    return render_template('home.html' )
-
-@app.route('/about')
-def about():
-    title = 'ABOUT'
-    return render_template('/about.html')
-
-@app.route('/register', methods=['GET','POST'])
-def register():
-    form = RegistrationForm()
-    if form.validate_on_submit():
-        flash(f'Account created for {form.username.data}!','success')
-        return redirect(url_for('home'))
-    return render_template('register.html',title='Register', form =form)
-    
-@app.route('/login', methods=['GET','POST'])
-def login():
-    form = LoginForm()
-    if form.validate_on_submit():
-        if form.email.data =='murimimaureen8@gmail.com' and form.password.data == 'password':
-            flash(f'Successful login ','success')
-            return redirect(url_for('home'))
-        else: 
-            flash(f'Unsuccessful login.Please check username and password ','danger') 
-    return render_template('login.html',title='Login', form =form)
-    
-
-if __name__ == "__main__":
-    app.run(debug= True)
+from app import views

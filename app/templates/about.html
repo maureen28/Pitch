@@ -1,6 +1,9 @@
 {% extends 'index.html' %}
-
-
+{% if title %}
+<title>{{title}}</title>
+{% else %}
+<title>PITCH</title>
+{% endif %}
 {% block content %}
 <h1>ABOUT PAGE</h1>
 {% endblock %}
