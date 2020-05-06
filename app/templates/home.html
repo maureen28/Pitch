@@ -2,7 +2,8 @@
 
 {% block content %}
 {% for post in posts.items %}
-<div class="container">
+<!-- <div class="container"> -->
+    <hr>
     <article class="media content-section">
         <img class="rounded-circle article-img"
             src="{{ url_for('static', filename='css/images/' + post.author.image_file) }}">
@@ -29,5 +30,5 @@
         {% endif %}
         {% endfor %}
     </div>
-</div>
+<!-- </div> -->
 {% endblock %}

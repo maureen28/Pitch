@@ -46,7 +46,7 @@
                 {{ form.submit(class='btn btn-outline-info') }}
             </div>
             <small class="text-muted ml-2">
-                Forgotten your login details? <a href="#"> Get help with signing in.</a>
+                Forgotten your login details? <a href="{{ url_for('reset_request') }}"> Get help with signing in.</a>
             </small>
         </form>
     </div>

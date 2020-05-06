@@ -4,9 +4,9 @@ from PIL import Image
 from flask import render_template, flash, redirect, url_for, request, abort
 from .forms import RegistrationForm, LoginForm, UpdateAccountForm, PostForm, RequestResetForm, ResetPasswordForm
 from .models import User,Post
-from app import app, db, bcrypt
+from app import app, db, bcrypt, mail
 from flask_login import login_user, current_user, logout_user, login_required
-
+from flask_mail import Message
 
 @app.route('/')
 @app.route('/home')
@@ -143,12 +143,11 @@ def user_posts(username):
 
 def send_reset_email(user):
     token = user.get_reset_token()
-    msg = Message('Password Reset Request',
-                  sender='noreply@demo.com',
-                  recipients=[user.email])
-    msg.body = f'''To reset your password, click the link below :
+    msg = Message('Password Reset Request', sender='nimz69509@gmail.com', recipients=[user.email])
+    msg.body = f'''There was recently a request to change the password on your account.
+    Click the link below to set a new password within 24 hours:
 {url_for('reset_token', token=token, _external=True)}
-If you did not make this request then simply ignore this email and no changes will be made.
+If you don't want to change your password, just ignore this message.
 '''
     mail.send(msg)
 
