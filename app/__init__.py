@@ -1,9 +1,10 @@
+ 
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 from flask_mail import Mail
-from app.config import Config
+from .config import Config
 
 
 db = SQLAlchemy()
@@ -24,10 +25,12 @@ def create_app(config_class=Config):
     mail.init_app(app)
 
     from app.users.views import users
-    from app.auth.views import auth
+    from app.posts.views import posts
     from app.main.views import main
+    from app.errors.handlers import errors
     app.register_blueprint(users)
-    app.register_blueprint(auth)
+    app.register_blueprint(posts)
     app.register_blueprint(main)
+    app.register_blueprint(errors)
 
     return app
