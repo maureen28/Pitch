@@ -2,8 +2,8 @@ from flask import render_template, url_for, flash,redirect, request, abort
 from flask import Blueprint
 from flask_login import current_user, login_required
 from app import db
-from app.models import Post, Comment, User
-from app.posts.forms import PostForm, CommentForm
+from app.models import Post, User
+from app.posts.forms import PostForm
 
 posts = Blueprint('posts', __name__)
 
@@ -13,7 +13,7 @@ posts = Blueprint('posts', __name__)
 def new_post():
     form = PostForm()
     if form.validate_on_submit():
-        post = Post(title=form.title.data, content=form.content.data, author=current_user)
+        post = Post(title=form.title.data, content=form.content.data, author=current_user, category=form.category.data)
         db.session.add(post)
         db.session.commit()
         flash('Your post has been created!', 'success')
@@ -24,7 +24,7 @@ def new_post():
 @posts.route("/post/<int:post_id>")
 def post(post_id):
     post = Post.query.get_or_404(post_id)
-    return render_template('post.html', title=post.title, post=post, comments = comments)
+    return render_template('post.html', title=post.title, post=post)
 
 
 @posts.route("/post/<int:post_id>/update", methods=['GET', 'POST'])
@@ -57,22 +57,3 @@ def delete_post(post_id):
     flash('Your post has been deleted!', 'success')
     return redirect(url_for('main.home'))
 
-@posts.route("/post/<string:category>")
-def category_post(category):
-    
-    post = Post.query.filter_by(category=category).all()
-    return render_template('category.html', post=post, category=category) 
-
-@posts.route("/post/<int:post_id>/comment", methods=['GET', 'POST'])
-@login_required
-def new_comment(post_id):
-    post = Post.query.get_or_404(post_id)
-    
-    form = CommentForm()
-    if form.validate_on_submit():
-        comment = Comment(comment=form.comment.data, author=current_user, post_id = post_id )
-        db.session.add(comment)
-        db.session.commit()
-        flash('New comment has been upladed!', 'success')
-        return redirect(url_for('posts.post', post_id=post.id))
-    return render_template('comment.html', title='New Comment Added', form=form, legend='New Comment Added')
