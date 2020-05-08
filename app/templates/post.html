@@ -1,8 +1,6 @@
 {% extends 'index.html' %}
 
 {% block content %}
-
-<!-- Actual post-->
 <article class="media content-section">
     <img class="rounded-circle article-img"
         src="{{ url_for('static', filename='css/images/' + post.author.image_file) }}">
@@ -22,15 +20,8 @@
         <h2 class="article-title">{{ post.title }}</h2>
         <p class="article-content">{{ post.content }}</p>
         <p class="article-content">{{ post.category }}</p>
-        <span>
-            <i id="like1" class="glyphicon glyphicon-thumbs-up"></i>
-            <div id="like1-bs3"></div>
-            <i id="dislike1" class="glyphicon glyphicon-thumbs-down"></i>
-            <div id="dislike1-bs3"></div>
-        </span>
     </div>
 </article>
-
 
 <!-- Modal -->
 <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel"
