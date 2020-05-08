@@ -8,9 +8,13 @@ Pitch is a Flask application that allows users an opportunity to say something m
 <ul>
 <li>Below is the landing page once the web browser is loaded</li>
 <img src="/Screenshot from 2020-04-28 09-36-51.jpg" alt="Pitch landing page" width="1000"/>
+<li>Below is the register page where the user will register</li>
+<img src="/login.jpg" alt="Register Form" width="800"/>
+<li>Below is the about page.</li>
+<img src="/about.jpg" alt="About page" width="800"/>
 </ul>
 
-### Live link :
+### Live link : https://pitchflask.herokuapp.com/
 
 ## User Story
 <ul>
