@@ -1,15 +1,15 @@
 .panel .panel-footer {
-    padding: 8px ;
-    background-color: #f9f9f9 ;
-    border-bottom-left-radius: 0 ;
+    padding: 8px;
+    background-color: #f9f9f9;
+    border-bottom-left-radius: 0;
 }
 
 .panel .panel-footer h4 {
     display: inline;
     font: 400 normal 1.125em "Roboto", Arial, Verdana, sans-serif;
     color: #34495e;
-    margin: 0 ;
-    padding: 0 ;
+    margin: 0;
+    padding: 0;
 }
 
 .panel .panel-footer i.glyphicon {
@@ -28,13 +28,13 @@
 }
 
 .panel .panel-footer div {
-   
+
     display: inline;
     font: 300 normal 1.125em "Roboto", Arial, Verdana, sans-serif;
     color: #34495e;
     text-align: center;
-    background-color: transparent ;
-    border: none ;
+    background-color: transparent;
+    border: none;
 }
 
 .modal-title {
@@ -45,3 +45,10 @@
     font: 400 normal 1.125em "Roboto", Arial, Verdana, sans-serif;
 }
 
+#like1 {
+    color: green;
+}
+
+#dislike1 {
+    color: red;
+}

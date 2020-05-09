@@ -66,14 +66,14 @@ def category_post(category):
 
 @posts.route("/post/<int:post_id>/comment", methods=['GET', 'POST'])
 @login_required
-def comment_section(post_id):
+def new_comment(post_id):
     post = Post.query.get_or_404(post_id)
     
     form = CommentForm()
     if form.validate_on_submit():
-        comment = Comment(comment=form.comment.data, author=current_user, post_id = post_id )
+        comment = Comment(comment=form.comment.data, post_id = post_id )
         db.session.add(comment)
         db.session.commit()
         flash('Comment has been added!', 'success')
         return redirect(url_for('posts.post', post_id=post.id))
-    return render_template('comment.html', title='Comment', form=form, legend='Comment')
+    return render_template('comment.html', title='Comment Here', form=form, legend='Comment Here')

@@ -1,6 +1,7 @@
 {% extends 'index.html' %}
 
 {% block content %}
+<br><br>
 <div class="content-section">
     <form method="POST" action="">
         {{ form.hidden_tag() }}
@@ -32,6 +33,11 @@
                     {{ form.content(class="form-control form-control-lg") }}
                 {% endif %}
             </div>
+            <div class="form-group">
+                    {{ form.category(class="form-control form-control-lg") }}
+               
+            </div>
+            
         </fieldset>
         <div class="form-group">
             {{ form.submit(class="btn btn-outline-info") }}
