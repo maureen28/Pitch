@@ -5,6 +5,7 @@ from app import db, bcrypt
 from app.models import User, Post, Comment
 from app.users.forms import RegistrationForm, LoginForm, UpdateAccountForm, RequestResetForm, ResetPasswordForm
 from app.users.utils import save_picture, send_reset_email
+from ..email import mail_message
 
 users = Blueprint('users', __name__)
 
@@ -19,9 +20,12 @@ def register():
         user = User(username = form.username.data, email = form.email.data , password = hashed_password)
         db.session.add(user)
         db.session.commit()
+        
+         mail_message("Welcome to Pitch","email/welcome_user",user.email,user=user)
+
         flash('Your account has been created! You can now log in', 'success')
         return redirect(url_for('users.login'))
-    return render_template('register.html',title='Create New Account', form =form)
+    return render_template('register.html',title='Created a New Account', form =form)
     
 @users.route('/login', methods=['GET','POST'])
 def login():

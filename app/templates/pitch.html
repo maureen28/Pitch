@@ -10,62 +10,40 @@
             <div class="form-group">
                 {{ form.title.label(class="form-control-label") }}
                 {% if form.title.errors %}
-                    {{ form.title(class="form-control form-control-lg is-invalid") }}
-                    <div class="invalid-feedback">
-                        {% for error in form.title.errors %}
-                            <span>{{ error }}</span>
-                        {% endfor %}
-                    </div>
+                {{ form.title(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.title.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
                 {% else %}
-                    {{ form.title(class="form-control form-control-lg") }}
+                {{ form.title(class="form-control form-control-lg") }}
                 {% endif %}
             </div>
             <div class="form-group">
                 {{ form.content.label(class="form-control-label") }}
                 {% if form.content.errors %}
-                    {{ form.content(class="form-control form-control-lg is-invalid") }}
-                    <div class="invalid-feedback">
-                        {% for error in form.content.errors %}
-                            <span>{{ error }}</span>
-                        {% endfor %}
-                    </div>
+                {{ form.content(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.content.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
                 {% else %}
-                    {{ form.content(class="form-control form-control-lg") }}
+                {{ form.content(class="form-control form-control-lg") }}
                 {% endif %}
             </div>
             <div class="form-group">
-                    {{ form.category(class="form-control form-control-lg") }}
-               
+                {{ form.category(class="form-control form-control-lg") }}
+
             </div>
-            
         </fieldset>
         <div class="form-group">
             {{ form.submit(class="btn btn-outline-info") }}
         </div>
-        <div>        <button type="button" class="btn btn-danger btn-sm m-1" data-toggle="modal"
-                data-target="#deleteModal">Delete</button>
-        </div>
-        
-    </form>
+    
 </div>
-<!-- Modal -->
-<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="deleteModalLabel">Delete Pitch?</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <form action="{{ url_for('posts.delete_post', post_id=post.id) }}" method="POST">
-                    <input class="btn btn-warning" type="submit" value="Delete">
-                </form>
-            </div>
-        </div>
-    </div>
+
+</form>
 </div>
 {% endblock  %}
