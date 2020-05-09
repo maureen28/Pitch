@@ -5,7 +5,7 @@ from flask_login import LoginManager
 from flask_mail import Mail
 from .config import Config
 from flask_bootstrap import Bootstrap
-
+from flask_uploads import UploadSet,configure_uploads,IMAGES
 
 
 bootstrap = Bootstrap()
@@ -15,7 +15,7 @@ login_manager = LoginManager()
 login_manager.login_view = 'users.login'
 login_manager.login_message_category = 'info'
 mail = Mail()
-
+photos = UploadSet('photos',IMAGES)
 
 def create_app(config_class=Config):
     app = Flask(__name__)
@@ -25,6 +25,8 @@ def create_app(config_class=Config):
     bcrypt.init_app(app)
     login_manager.init_app(app)
     mail.init_app(app)
+    # configure UploadSet
+    configure_uploads(app,photos)
 
     from app.users.views import users
     from app.posts.views import posts

@@ -24,6 +24,7 @@
 </article>
 
 <div class="content-section">
+    {% include 'like.html' %}
     <a href="{{ url_for('posts.comment_section', post_id=post.id) }}"> Leave a comment</a>
     <div class="mt-4 mb-4">
             <h4>Comments</h4>
@@ -41,6 +42,7 @@
         {% endif %}
         </div>
 </div>
+
 
 <!-- Modal -->
 <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel"
